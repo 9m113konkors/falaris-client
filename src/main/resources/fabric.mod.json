@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "falaris",
+	"version": "${version}",
+	"name": "falaris",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/falaris/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.falaris.Falaris"
+		],
+		"client": [
+			"com.falaris.client.FalarisClient"
+		]
+	},
+	"mixins": [
+		"falaris.mixins.json",
+		{
+			"config": "falaris.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
