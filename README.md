@@ -1,12 +1,14 @@
 # falaris-client
-The greatest vibecoded hack client ever
 
-# IMPORTANT
-I recommend using IntelliJ IDEA Community Edition (free),
-since it has a built-in Gradle menu and makes setup much easier.
+A Java-based Minecraft client built with Gradle.
+
+# IMPORTANT RECOMMENDATION
+It is strongly recommended to use IntelliJ IDEA Community Edition (free),
+as it includes built-in Gradle integration and significantly simplifies project setup,
+dependency management, and build execution.
 
 # REQUIREMENTS
-- Java 21
+- Java Development Kit (JDK) 21
 - Git
 - IntelliJ IDEA Community Edition (recommended)
 
@@ -17,31 +19,33 @@ git clone https://github.com/YOUR_USERNAME/falaris-client.git
 cd falaris-client
 
 # 2. Install Java 21
-# Download from:
-https://adoptium.net/
-OR
-https://www.oracle.com/java/technologies/downloads/
+# Recommended distributions:
+# - Eclipse Adoptium: https://adoptium.net/
+# - Oracle JDK: https://www.oracle.com/java/technologies/downloads/
 
-# BUILDING THE PROJECT
+# BUILD INSTRUCTIONS
 
-# Option 1: IntelliJ IDEA (recommended)
-# - Open IntelliJ IDEA Community Edition
-# - Click "Open"
-# - Select the falaris-client folder
-# - Wait for Gradle sync
-# - Use the Gradle tab to build/run
+# Option A: IntelliJ IDEA (Recommended)
+# 1. Open IntelliJ IDEA Community Edition
+# 2. Select "Open" and choose the project directory
+# 3. Allow Gradle to import and synchronize dependencies
+# 4. Ensure JDK 21 is selected as the Project SDK
+# 5. Use the Gradle tool window to run build tasks
 
-# Option 2: Command Line (Windows)
+# Option B: Command Line
+
+# Windows
 gradlew build
 
-# Option 2: Command Line (Linux / macOS)
+# macOS / Linux
 ./gradlew build
 
-# OUTPUT
-# The compiled JAR will be located at:
+# OUTPUT ARTIFACT
+# After a successful build, the compiled JAR file will be located in:
 build/libs/
 
-# NOTES
-# - Make sure Java 21 is selected as the project SDK
-# - Gradle will auto-download dependencies on first run
-# - If Gradle fails, refresh the project or re-import it in IntelliJ
+# TROUBLESHOOTING
+# - Ensure JDK 21 is correctly installed and configured in your PATH
+# - If Gradle sync fails, re-import the project in IntelliJ IDEA
+# - Run a clean build if issues persist:
+#     ./gradlew clean build
