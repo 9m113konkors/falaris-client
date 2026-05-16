@@ -1,7 +1,9 @@
 # Falaris client
 Best vibecoded hack client
 # Building
-1) clone the repository with 'git clone https://github.com/9m113konkors/falaris-client.git'
+1) clone the repository with ```bash
+git clone https://github.com/9m113konkors/falaris-client.git
+```
 2) run
 ```bash
 ./gradlew build
