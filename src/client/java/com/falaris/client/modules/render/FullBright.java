@@ -5,22 +5,24 @@ import com.falaris.client.modules.Module;
 import com.falaris.client.modules.setting.BooleanSetting;
 
 public class FullBright extends Module {
-    public final BooleanSetting restoreOnDisable = addSetting(new BooleanSetting("Restore on Disable", "Restore gamma on module disable", true));
-    private double oldGamma = 0.0;
+    public final BooleanSetting restoreOnDisable = addSetting(new BooleanSetting("Restore on Disable", "Restore gamma when toggled off", true));
+    private double oldGamma;
 
     public FullBright() {
-        super("FullBright", "Sets game gamma to max", Category.VISUAL, "bright", "gamma");
+        super("FullBright", "Increases brightness gamma for night and cave vision", Category.VISUAL, "bright", "gamma");
     }
 
     @Override
     public void onEnable() {
-        oldGamma = mc.options.gamma().get();
-        mc.options.gamma().set(10.0);
+        if (mc.options != null) {
+            oldGamma = mc.options.gamma().get();
+            mc.options.gamma().set(20.0);
+        }
     }
 
     @Override
     public void onDisable() {
-        if (restoreOnDisable.getValue()) {
+        if (restoreOnDisable.getValue() && mc.options != null) {
             mc.options.gamma().set(oldGamma);
         }
     }
