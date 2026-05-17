@@ -1,0 +1,56 @@
+﻿
+         4: areturn
+  
+    public net.minecraft.client.CommandHistory commandHistory();
+      Code:
+         0: aload_0
+         1: getfield      #1103               // Field 
+commandHistory:Lnet/minecraft/client/CommandHistory;
+         4: areturn
+  
+    public net.minecraft.world.level.validation.DirectoryValidator 
+directoryValidator();
+      Code:
+         0: aload_0
+         1: getfield      #564                // Field 
+directoryValidator:Lnet/minecraft/world/level/validation/DirectoryValidator;
+         4: areturn
+  
+    public net.minecraft.client.renderer.PlayerSkinRenderCache 
+playerSkinRenderCache();
+      Code:
+         0: aload_0
+         1: getfield      #1153               // Field 
+playerSkinRenderCache:Lnet/minecraft/client/renderer/PlayerSkinRenderCache;
+         4: areturn
+  
+>   private float getTickTargetMillis(float);
+      Code:
+         0: aload_0
+         1: getfield      #1348               // Field 
+level:Lnet/minecraft/client/multiplayer/ClientLevel;
+         4: ifnull        31
+         7: aload_0
+         8: getfield      #1348               // Field 
+level:Lnet/minecraft/client/multiplayer/ClientLevel;
+        11: invokevirtual #2833               // Method net/minecraft/client/mu
+ltiplayer/ClientLevel.tickRateManager:()Lnet/minecraft/world/TickRateManager;
+        14: astore_2
+        15: aload_2
+        16: invokevirtual #2838               // Method 
+net/minecraft/world/TickRateManager.runsNormally:()Z
+        19: ifeq          31
+        22: fload_1
+        23: aload_2
+        24: invokevirtual #5037               // Method 
+net/minecraft/world/TickRateManager.millisecondsPerTick:()F
+        27: invokestatic  #5040               // Method 
+java/lang/Math.max:(FF)F
+        30: freturn
+        31: fload_1
+        32: freturn
+  
+    public net.minecraft.client.renderer.item.ItemModelResolver 
+getItemModelResolver();
+
+

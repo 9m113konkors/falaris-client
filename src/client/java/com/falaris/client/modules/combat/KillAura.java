@@ -24,10 +24,18 @@ public class KillAura extends Module {
             return;
         }
 
-        Player target = mc.level.players().stream()
-                .filter(player -> CombatUtil.isValidCombatTarget(mc.player, player, range.getValue(), fov.getValue()))
-                .min((left, right) -> Double.compare(mc.player.distanceTo(left), mc.player.distanceTo(right)))
-                .orElse(null);
+        // include Reach bonus if available
+        double effectiveRange = range.getValue();
+        com.falaris.client.modules.combat.Reach reach = com.falaris.client.modules.ModuleManager.INSTANCE.getModule(com.falaris.client.modules.combat.Reach.class);
+        if (reach != null) effectiveRange += reach.extra.getValue();
+
+        Player target = null;
+        double best = Double.MAX_VALUE;
+        for (Player p : mc.level.players()) {
+            if (!CombatUtil.isValidCombatTarget(mc.player, p, effectiveRange, fov.getValue())) continue;
+            double d = mc.player.distanceTo(p);
+            if (d < best) { best = d; target = p; }
+        }
 
         if (target == null || !CombatUtil.isAttackReady(mc.player, attackStrength.getValue())) {
             return;

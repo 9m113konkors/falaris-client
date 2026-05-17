@@ -1,0 +1,16 @@
+﻿
+      Code:
+         0: aload_0
+         1: getfield      #1153               // Field 
+playerSkinRenderCache:Lnet/minecraft/client/renderer/PlayerSkinRenderCache;
+         4: areturn
+  
+>   private float getTickTargetMillis(float);
+      Code:
+         0: aload_0
+         1: getfield      #1348               // Field 
+level:Lnet/minecraft/client/multiplayer/ClientLevel;
+         4: ifnull        31
+         7: aload_0
+
+

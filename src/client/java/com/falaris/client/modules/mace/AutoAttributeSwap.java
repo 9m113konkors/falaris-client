@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 public class AutoAttributeSwap extends Module {
     public final BooleanSetting countJumping = addSetting(new BooleanSetting("Count Jumping", "Treat jumping as airborne when choosing Density", false));
     private int lastSwapTick = -20;
+    private int lastManualSlot = -1;
 
     public AutoAttributeSwap() {
         super("AutoAttributeSwap", "Swaps between Breach and Density maces", Category.MACE, "mace swap", "density breach");
@@ -20,12 +21,19 @@ public class AutoAttributeSwap extends Module {
             return;
         }
 
+        int currentSlot = mc.player.getInventory().getSelectedSlot();
+        if (lastManualSlot != -1 && currentSlot != lastManualSlot) {
+            lastManualSlot = -1; 
+        } else if (lastManualSlot != -1) {
+            return; 
+        }
+
         if (mc.player.tickCount - lastSwapTick < 2) {
             return;
         }
 
         int preferredSlot = findPreferredMaceSlot();
-        if (preferredSlot < 0 || mc.player.getInventory().getSelectedSlot() == preferredSlot) {
+        if (preferredSlot < 0 || currentSlot == preferredSlot) {
             return;
         }
 
@@ -36,6 +44,7 @@ public class AutoAttributeSwap extends Module {
 
         mc.player.getInventory().setSelectedSlot(preferredSlot);
         lastSwapTick = mc.player.tickCount;
+        lastManualSlot = preferredSlot;
     }
 
     private int findPreferredMaceSlot() {

@@ -1,0 +1,230 @@
+﻿
+  
+>     public boolean wireframe;
+      public boolean smartCull;
+      private boolean windowActive;
+>     private java.util.concurrent.CompletableFuture<java.lang.Void> 
+  pendingReload;
+>     private net.minecraft.client.gui.components.toasts.TutorialToast 
+  socialInteractionsToast;
+>     private int fpsPieRenderTicks;
+>     private final net.minecraft.util.profiling.ContinuousProfiler 
+> fpsPieProfiler;
+>     private net.minecraft.util.profiling.metrics.profiling.MetricsRecorder 
+  metricsRecorder;
+>     private final net.minecraft.client.ResourceLoadStateTracker 
+  reloadStateTracker;
+      private long savedCpuDuration;
+  >   private double gpuUtilization;
+>     private com.mojang.blaze3d.systems.TimerQuery$FrameProfile 
+> currentFrameProfile;
+>     private final net.minecraft.client.GameNarrator narrator;
+>     private final net.minecraft.client.multiplayer.chat.ChatListener 
+  chatListener;
+>     private net.minecraft.client.multiplayer.chat.report.ReportingContext 
+  reportingContext;
+>     private final net.minecraft.client.CommandHistory commandHistory;
+>     private final net.minecraft.world.level.validation.DirectoryValidator 
+  directoryValidator;
+>     private boolean gameLoadFinished;
+>     private final long clientStartTimeMs;
+      private long clientTickCount;
+>     private final net.minecraft.network.PacketProcessor packetProcessor;
+      private void continueAttack(boolean);
+      private boolean startAttack();
+      private void startUseItem();
+>     public net.minecraft.client.sounds.MusicManager getMusicManager();
+      public void tick();
+      private boolean isLevelRunningNormally();
+      private boolean isMultiplayerServer();
+      private void handleKeybinds();
+>     private 
+java.util.Optional<net.minecraft.core.Holder<net.minecraft.server.d
+  ialog.Dialog>> getQuickActionsDialog();
+>     public net.minecraft.client.telemetry.ClientTelemetryManager 
+  getTelemetryManager();
+  >   public double getGpuUtilization();
+>     public net.minecraft.client.multiplayer.ProfileKeyPairManager 
+> getProfileKeyPairManager();
+>     public net.minecraft.client.gui.screens.worldselection.WorldOpenFlows 
+> createWorldOpenFlows();
+>     public void 
+doWorldLoad(net.minecraft.world.level.storage.LevelStorageSourc
+> e$LevelStorageAccess, net.minecraft.server.packs.repository.PackRepository, 
+> net.minecraft.server.WorldStem, boolean);
+>     public void setLevel(net.minecraft.client.multiplayer.ClientLevel);
+>     public void disconnectFromWorld(net.minecraft.network.chat.Component);
+      public void disconnectWithSavingScreen();
+      public void disconnectWithProgressScreen();
+      public void disconnectWithProgressScreen(boolean);
+>     public void disconnect(net.minecraft.client.gui.screens.Screen, boolean);
+>     public void disconnect(net.minecraft.client.gui.screens.Screen, boolean, 
+  boolean);
+>     public net.minecraft.client.Minecraft$ChatStatus getChatStatus();
+>     public final boolean isDemo();
+>     public final boolean canSwitchGameMode();
+>     public net.minecraft.client.multiplayer.ClientPacketListener 
+  getConnection();
+      public static boolean renderNames();
+      public static boolean useAmbientOcclusion();
+      private void pickBlock();
+>     public net.minecraft.CrashReport fillReport(net.minecraft.CrashReport);
+>     public static void fillReport(net.minecraft.client.Minecraft, 
+> net.minecraft.client.resources.language.LanguageManager, java.lang.String, 
+> net.minecraft.client.Options, net.minecraft.CrashReport);
+> >   private static java.lang.String formatSeconds(double);
+>     private void fillUptime(net.minecraft.CrashReportCategory);
+>     private static net.minecraft.SystemReport 
+> fillSystemReport(net.minecraft.SystemReport, net.minecraft.client.Minecraft, 
+> net.minecraft.client.resources.language.LanguageManager, java.lang.String, 
+> net.minecraft.client.Options);
+>     public static net.minecraft.client.Minecraft getInstance();
+>     public java.util.concurrent.CompletableFuture<java.lang.Void> 
+  delayTextureReload();
+>     public void 
+updateReportEnvironment(net.minecraft.client.multiplayer.chat.r
+  eport.ReportEnvironment);
+>     public net.minecraft.client.multiplayer.ServerData getCurrentServer();
+      public boolean isLocalServer();
+      public boolean hasSingleplayerServer();
+>     public net.minecraft.client.server.IntegratedServer 
+  getSingleplayerServer();
+      public boolean isSingleplayer();
+>     public net.minecraft.server.packs.resources.ResourceManager 
+  getResourceManager();
+>     public net.minecraft.server.packs.repository.PackRepository 
+  getResourcePackRepository();
+>     public net.minecraft.server.packs.VanillaPackResources 
+  getVanillaPackResources();
+>     public net.minecraft.client.resources.server.DownloadedPackSource 
+  getDownloadedPackSource();
+>     public java.nio.file.Path getResourcePackDirectory();
+>     public net.minecraft.client.resources.language.LanguageManager 
+  getLanguageManager();
+      public boolean isPaused();
+>     public net.minecraft.client.renderer.GpuWarnlistManager 
+  getGpuWarnlistManager();
+>     public net.minecraft.client.sounds.SoundManager getSoundManager();
+>     public net.minecraft.sounds.Music getSituationalMusic();
+> >   public float getMusicVolume();
+>     public net.minecraft.server.Services services();
+>     public net.minecraft.client.resources.SkinManager getSkinManager();
+>     public net.minecraft.world.entity.Entity getCameraEntity();
+>     public void setCameraEntity(net.minecraft.world.entity.Entity);
+      public boolean 
+> shouldEntityAppearGlowing(net.minecraft.world.entity.Entity);
+      protected java.lang.Thread getRunningThread();
+      public java.lang.Runnable wrapRunnable(java.lang.Runnable);
+      protected boolean shouldRun(java.lang.Runnable);
+>     public net.minecraft.client.renderer.block.BlockRenderDispatcher 
+  getBlockRenderer();
+>     public net.minecraft.client.renderer.entity.EntityRenderDispatcher 
+  getEntityRenderDispatcher();
+      public 
+> net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher 
+  getBlockEntityRenderDispatcher();
+>     public net.minecraft.client.renderer.entity.ItemRenderer 
+getItemRenderer();
+>     public net.minecraft.client.renderer.MapRenderer getMapRenderer();
+>     public com.mojang.datafixers.DataFixer getFixerUpper();
+> >   public net.minecraft.client.DeltaTracker getDeltaTracker();
+>     public net.minecraft.client.color.block.BlockColors getBlockColors();
+>     public boolean showOnlyReducedInfo();
+>     public net.minecraft.client.gui.components.toasts.ToastManager 
+  getToastManager();
+>     public net.minecraft.client.tutorial.Tutorial getTutorial();
+      public boolean isWindowActive();
+>     public net.minecraft.client.HotbarManager getHotbarManager();
+>     public net.minecraft.client.resources.model.ModelManager 
+getModelManager();
+>     public net.minecraft.client.resources.model.AtlasManager 
+getAtlasManager();
+>     public net.minecraft.client.resources.MapTextureManager 
+  getMapTextureManager();
+>     public net.minecraft.client.resources.WaypointStyleManager 
+  getWaypointStyles();
+>     public net.minecraft.client.InputType getLastInputType();
+>     public void setLastInputType(net.minecraft.client.InputType);
+>     public net.minecraft.client.GameNarrator getNarrator();
+>     public net.minecraft.client.multiplayer.chat.ChatListener 
+  getChatListener();
+>     public net.minecraft.client.multiplayer.chat.report.ReportingContext 
+  getReportingContext();
+>     public com.mojang.realmsclient.gui.RealmsDataFetcher realmsDataFetcher();
+>     public net.minecraft.client.quickplay.QuickPlayLog quickPlayLog();
+>     public net.minecraft.client.CommandHistory commandHistory();
+>     public net.minecraft.world.level.validation.DirectoryValidator 
+  directoryValidator();
+>     public net.minecraft.client.renderer.PlayerSkinRenderCache 
+  playerSkinRenderCache();
+> >   private float getTickTargetMillis(float);
+>     public net.minecraft.client.renderer.item.ItemModelResolver 
+  getItemModelResolver();
+      public boolean canInterruptScreen();
+      public static java.lang.String getLauncherBrand();
+>     public net.minecraft.network.PacketProcessor packetProcessor();
+>     public net.minecraft.gizmos.Gizmos$TemporaryCollection 
+  collectPerTickGizmos();
+  >   public 
+> 
+java.util.Collection<net.minecraft.gizmos.SimpleGizmoCollector$GizmoInstance> 
+  getPerTickGizmos();
+>     private static net.minecraft.network.chat.Style 
+method_35704(java.io.File, 
+> net.minecraft.network.chat.Style);
+>     private static void method_35701(net.minecraft.network.chat.Component);
+      private static java.util.concurrent.CompletionStage 
+> method_18507(java.util.concurrent.CompletableFuture);
+      private static java.lang.String method_60864();
+      private static java.lang.String method_37288();
+      private static java.lang.String 
+> method_37280(net.minecraft.client.resources.language.LanguageManager);
+      private static java.lang.String 
+> method_37279(net.minecraft.client.Minecraft);
+      private static java.lang.String 
+> method_53905(net.minecraft.client.Minecraft);
+      private static java.lang.String method_37287();
+      private static java.lang.String method_37289();
+      private static boolean method_1491();
+>     private void method_34746(java.util.function.Consumer, 
+> net.minecraft.util.profiling.ProfileResults);
+      private static void 
+> method_37277(net.minecraft.util.profiling.ProfileResults);
+>     private static void method_37284(java.util.function.Consumer, 
+> java.util.concurrent.CompletableFuture, 
+> java.util.concurrent.CompletableFuture);
+>     private static void method_37283(java.util.function.Consumer, 
+> java.nio.file.Path);
+>     private void method_37276(net.minecraft.SystemReport, 
+> java.util.function.Consumer, java.util.List);
+>     private void method_37291(java.util.function.Consumer, 
+java.nio.file.Path);
+>     private static void method_37285(java.util.function.Consumer, 
+> net.minecraft.network.chat.Component);
+>     private static net.minecraft.network.chat.Style 
+> method_37281(java.nio.file.Path, net.minecraft.network.chat.Style);
+>     private void method_37290(java.util.function.Consumer, 
+> net.minecraft.util.profiling.ProfileResults);
+> >   private static void method_37282(java.util.function.Consumer, double, 
+int);
+>     private static void method_18508(java.util.concurrent.CompletableFuture);
+      private void method_44352(boolean);
+>     private static void method_64035(net.minecraft.core.Holder$Reference);
+      private void method_24228(boolean, 
+> net.minecraft.client.Minecraft$GameLoadCookie, 
+> java.util.concurrent.CompletableFuture, java.util.Optional);
+>     private void method_29339(java.util.concurrent.CompletableFuture, 
+> net.minecraft.client.Minecraft$GameLoadCookie);
+      private void method_49293(boolean, 
+> net.minecraft.client.Minecraft$GameLoadCookie, java.lang.Throwable);
+>     private static net.minecraft.CrashReport 
+> method_43588(net.minecraft.CrashReport);
+>     private net.minecraft.CrashReport 
+method_43589(net.minecraft.CrashReport);
+>     private void method_24229(net.minecraft.network.chat.Component);
+>     private static net.minecraft.client.gui.screens.Screen 
+> method_53519(com.mojang.authlib.GameProfile, java.lang.Runnable);
+  
+  
+
+

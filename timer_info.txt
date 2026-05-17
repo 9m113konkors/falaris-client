@@ -1,0 +1,141 @@
+﻿
+    private static final net.minecraft.network.chat.Component SAVING_LEVEL;
+    public static final java.lang.String UPDATE_DRIVERS_ADVICE;
+    private final long canary;
+    private final java.nio.file.Path resourcePackDirectory;
+    private final java.util.concurrent.CompletableFuture<com.mojang.authlib.ygg
+drasil.ProfileResult> profileFuture;
+    private final net.minecraft.client.renderer.texture.TextureManager 
+textureManager;
+    private final net.minecraft.client.renderer.ShaderManager shaderManager;
+    private final com.mojang.datafixers.DataFixer fixerUpper;
+    private final net.minecraft.client.renderer.VirtualScreen virtualScreen;
+    private final com.mojang.blaze3d.platform.Window window;
+>   private final net.minecraft.client.DeltaTracker$Timer deltaTracker;
+    private final net.minecraft.client.renderer.RenderBuffers renderBuffers;
+    public final net.minecraft.client.renderer.LevelRenderer levelRenderer;
+    private final net.minecraft.client.renderer.entity.EntityRenderDispatcher 
+entityRenderDispatcher;
+    private final net.minecraft.client.renderer.item.ItemModelResolver 
+itemModelResolver;
+    private final net.minecraft.client.renderer.entity.ItemRenderer 
+itemRenderer;
+    private final net.minecraft.client.renderer.MapRenderer mapRenderer;
+    public final net.minecraft.client.particle.ParticleEngine particleEngine;
+    private final net.minecraft.client.particle.ParticleResources 
+particleResources;
+    private final net.minecraft.client.User user;
+    public final net.minecraft.client.gui.Font font;
+    public boolean smartCull;
+    private boolean windowActive;
+    private java.util.concurrent.CompletableFuture<java.lang.Void> 
+pendingReload;
+    private net.minecraft.client.gui.components.toasts.TutorialToast 
+socialInteractionsToast;
+    private int fpsPieRenderTicks;
+    private final net.minecraft.util.profiling.ContinuousProfiler 
+fpsPieProfiler;
+    private net.minecraft.util.profiling.metrics.profiling.MetricsRecorder 
+metricsRecorder;
+    private final net.minecraft.client.ResourceLoadStateTracker 
+reloadStateTracker;
+    private long savedCpuDuration;
+    private double gpuUtilization;
+>   private com.mojang.blaze3d.systems.TimerQuery$FrameProfile 
+currentFrameProfile;
+    private final net.minecraft.client.GameNarrator narrator;
+    private final net.minecraft.client.multiplayer.chat.ChatListener 
+chatListener;
+    private net.minecraft.client.multiplayer.chat.report.ReportingContext 
+reportingContext;
+    private final net.minecraft.client.CommandHistory commandHistory;
+    private final net.minecraft.world.level.validation.DirectoryValidator 
+directoryValidator;
+    private boolean gameLoadFinished;
+    private final long clientStartTimeMs;
+    private long clientTickCount;
+    private final net.minecraft.network.PacketProcessor packetProcessor;
+    private final net.minecraft.gizmos.SimpleGizmoCollector perTickGizmos;
+    public boolean isEnforceUnicode();
+    public java.util.concurrent.CompletableFuture<java.lang.Void> 
+reloadResourcePacks();
+    private java.util.concurrent.CompletableFuture<java.lang.Void> 
+reloadResourcePacks(boolean, net.minecraft.client.Minecraft$GameLoadCookie);
+    private void selfTest();
+    public net.minecraft.world.level.storage.LevelStorageSource 
+getLevelSource();
+    public void 
+openChatScreen(net.minecraft.client.gui.components.ChatComponent$ChatMethod);
+    public void setScreen(net.minecraft.client.gui.screens.Screen);
+    public void setOverlay(net.minecraft.client.gui.screens.Overlay);
+    public void destroy();
+    public void close();
+>   private void runTick(boolean);
+    private net.minecraft.util.profiling.ProfilerFiller 
+constructProfiler(boolean, net.minecraft.util.profiling.SingleTickProfiler);
+    private void finishProfilers(boolean, 
+net.minecraft.util.profiling.SingleTickProfiler);
+    public void resizeDisplay();
+    public void cursorEntered();
+    public int getFps();
+    public long getFrameTimeNs();
+    private void emergencySave();
+    public boolean debugClientMetricsStart(java.util.function.Consumer<net.mine
+craft.network.chat.Component>);
+    private void debugClientMetricsStop();
+    private void debugClientMetricsCancel();
+    public boolean 
+shouldEntityAppearGlowing(net.minecraft.world.entity.Entity);
+    protected java.lang.Thread getRunningThread();
+    public java.lang.Runnable wrapRunnable(java.lang.Runnable);
+    protected boolean shouldRun(java.lang.Runnable);
+    public net.minecraft.client.renderer.block.BlockRenderDispatcher 
+getBlockRenderer();
+    public net.minecraft.client.renderer.entity.EntityRenderDispatcher 
+getEntityRenderDispatcher();
+    public 
+net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher 
+getBlockEntityRenderDispatcher();
+    public net.minecraft.client.renderer.entity.ItemRenderer getItemRenderer();
+    public net.minecraft.client.renderer.MapRenderer getMapRenderer();
+    public com.mojang.datafixers.DataFixer getFixerUpper();
+>   public net.minecraft.client.DeltaTracker getDeltaTracker();
+    public net.minecraft.client.color.block.BlockColors getBlockColors();
+    public boolean showOnlyReducedInfo();
+    public net.minecraft.client.gui.components.toasts.ToastManager 
+getToastManager();
+    public net.minecraft.client.tutorial.Tutorial getTutorial();
+    public boolean isWindowActive();
+    public net.minecraft.client.HotbarManager getHotbarManager();
+    public net.minecraft.client.resources.model.ModelManager getModelManager();
+    public net.minecraft.client.resources.model.AtlasManager getAtlasManager();
+    public net.minecraft.client.resources.MapTextureManager 
+getMapTextureManager();
+    public net.minecraft.client.resources.WaypointStyleManager 
+getWaypointStyles();
+    private int method_16010();
+    private void method_53522(net.minecraft.client.Minecraft$GameLoadCookie, 
+java.util.Optional);
+    private void method_29338(net.minecraft.client.Minecraft$GameLoadCookie);
+    private void method_53521(net.minecraft.client.Minecraft$GameLoadCookie, 
+java.lang.Throwable);
+    private void 
+method_60320(net.minecraft.client.resources.language.ClientLanguage);
+    private java.lang.String method_68467(net.minecraft.resources.Identifier, 
+com.mojang.blaze3d.shaders.ShaderType);
+    private com.mojang.authlib.minecraft.UserApiService$UserProperties 
+method_55608();
+    private com.mojang.authlib.yggdrasil.ProfileResult method_53464();
+    static {};
+  }
+> Compiled from "DeltaTracker.java"
+> public interface net.minecraft.client.DeltaTracker {
+>   public static final net.minecraft.client.DeltaTracker ZERO;
+>   public static final net.minecraft.client.DeltaTracker ONE;
+>   public abstract float getGameTimeDeltaTicks();
+    public abstract float getGameTimeDeltaPartialTick(boolean);
+    public abstract float getRealtimeDeltaTicks();
+    static {};
+  }
+
+

@@ -1,0 +1,572 @@
+﻿
+  runTick_dump.txt:21:  private static final 
+net.minecraft.network.chat.Component SAVING_LEVEL;
+  runTick_dump.txt:22:
+  runTick_dump.txt:23:  public static final java.lang.String 
+UPDATE_DRIVERS_ADVICE;
+  runTick_dump.txt:24:
+  runTick_dump.txt:25:  private final long canary;
+  runTick_dump.txt:26:
+  runTick_dump.txt:27:  private final java.nio.file.Path resourcePackDirectory;
+  runTick_dump.txt:28:
+  runTick_dump.txt:29:  private final java.util.concurrent.CompletableFuture<co
+m.mojang.authlib.yggdrasil.ProfileResult> profileFuture;
+  runTick_dump.txt:30:
+  runTick_dump.txt:31:  private final 
+net.minecraft.client.renderer.texture.TextureManager textureManager;
+  runTick_dump.txt:32:
+  runTick_dump.txt:33:  private final 
+net.minecraft.client.renderer.ShaderManager shaderManager;
+  runTick_dump.txt:34:
+  runTick_dump.txt:35:  private final com.mojang.datafixers.DataFixer 
+fixerUpper;
+  runTick_dump.txt:36:
+  runTick_dump.txt:37:  private final 
+net.minecraft.client.renderer.VirtualScreen virtualScreen;
+  runTick_dump.txt:38:
+  runTick_dump.txt:39:  private final com.mojang.blaze3d.platform.Window 
+window;
+  runTick_dump.txt:40:
+> runTick_dump.txt:41:  private final net.minecraft.client.DeltaTracker$Timer 
+deltaTracker;
+  runTick_dump.txt:42:
+  runTick_dump.txt:43:  private final 
+net.minecraft.client.renderer.RenderBuffers renderBuffers;
+  runTick_dump.txt:44:
+  runTick_dump.txt:45:  public final 
+net.minecraft.client.renderer.LevelRenderer levelRenderer;
+  runTick_dump.txt:46:
+  runTick_dump.txt:47:  private final 
+net.minecraft.client.renderer.entity.EntityRenderDispatcher 
+entityRenderDispatcher;
+  runTick_dump.txt:48:
+  runTick_dump.txt:49:  private final 
+net.minecraft.client.renderer.item.ItemModelResolver itemModelResolver;
+  runTick_dump.txt:50:
+  runTick_dump.txt:51:  private final 
+net.minecraft.client.renderer.entity.ItemRenderer itemRenderer;
+  runTick_dump.txt:52:
+  runTick_dump.txt:53:  private final 
+net.minecraft.client.renderer.MapRenderer mapRenderer;
+  runTick_dump.txt:54:
+  runTick_dump.txt:55:  public final 
+net.minecraft.client.particle.ParticleEngine particleEngine;
+  runTick_dump.txt:56:
+  runTick_dump.txt:57:  private final 
+net.minecraft.client.particle.ParticleResources particleResources;
+  runTick_dump.txt:58:
+  runTick_dump.txt:59:  private final net.minecraft.client.User user;
+  runTick_dump.txt:60:
+  runTick_dump.txt:61:  public final net.minecraft.client.gui.Font font;
+  runTick_dump.txt:249:  private final long clientStartTimeMs;
+  runTick_dump.txt:250:
+  runTick_dump.txt:251:  private long clientTickCount;
+  runTick_dump.txt:252:
+  runTick_dump.txt:253:  private final net.minecraft.network.PacketProcessor 
+packetProcessor;
+  runTick_dump.txt:254:
+  runTick_dump.txt:255:  private final 
+net.minecraft.gizmos.SimpleGizmoCollector perTickGizmos;
+  runTick_dump.txt:256:
+  runTick_dump.txt:257:  private 
+java.util.List<net.minecraft.gizmos.SimpleGizmoCollector$GizmoInstance> 
+drainedLatestTickGizmos;
+  runTick_dump.txt:258:
+  runTick_dump.txt:259:  public 
+net.minecraft.client.Minecraft(net.minecraft.client.main.GameConfig);
+  runTick_dump.txt:260:    Code:
+  runTick_dump.txt:261:       0: aload_0
+  runTick_dump.txt:262:       1: ldc_w         #419                // String 
+Client
+  runTick_dump.txt:263:       4: invokespecial #422                // Method ne
+t/minecraft/util/thread/ReentrantBlockableEventLoop."<init>":(Ljava/lang/String
+;)V
+  runTick_dump.txt:264:       7: aload_0
+  runTick_dump.txt:265:       8: ldc2_w        #423                // double 
+3.141592653589793d
+  runTick_dump.txt:266:      11: invokestatic  #430                // Method 
+java/lang/Double.doubleToLongBits:(D)J
+  runTick_dump.txt:267:      14: putfield      #432                // Field 
+canary:J
+  runTick_dump.txt:268:      17: aload_0
+> runTick_dump.txt:269:      18: new           #26                 // class 
+net/minecraft/client/DeltaTracker$Timer
+  runTick_dump.txt:270:      21: dup
+  runTick_dump.txt:271:      22: ldc_w         #433                // float 
+20.0f
+  runTick_dump.txt:272:      25: lconst_0
+  runTick_dump.txt:273:      26: aload_0
+  runTick_dump.txt:274:      27: invokedynamic #450,  0            // 
+InvokeDynamic #0:apply:(Lnet/minecraft/client/Minecraft;)Lit/unimi/dsi/fastutil
+/floats/FloatUnaryOperator;
+> runTick_dump.txt:275:      32: invokespecial #453                // Method ne
+t/minecraft/client/DeltaTracker$Timer."<init>":(FJLit/unimi/dsi/fastutil/floats
+/FloatUnaryOperator;)V
+> runTick_dump.txt:276:      35: putfield      #455                // Field 
+deltaTracker:Lnet/minecraft/client/DeltaTracker$Timer;
+  runTick_dump.txt:277:      38: aload_0
+  runTick_dump.txt:278:      39: getstatic     #460                // Field 
+net/minecraft/client/InputType.NONE:Lnet/minecraft/client/InputType;
+  runTick_dump.txt:279:      42: putfield      #462                // Field 
+lastInputType:Lnet/minecraft/client/InputType;
+  runTick_dump.txt:280:      45: aload_0
+  runTick_dump.txt:281:      46: new           #464                // class 
+net/minecraft/client/PeriodicNotificationManager
+  runTick_dump.txt:282:      49: dup
+  runTick_dump.txt:283:      50: getstatic     #466                // Field 
+REGIONAL_COMPLIANCIES:Lnet/minecraft/resources/Identifier;
+  runTick_dump.txt:284:      53: invokedynamic #476,  0            // 
+InvokeDynamic 
+#1:getBoolean:()Lit/unimi/dsi/fastutil/objects/Object2BooleanFunction;
+  runTick_dump.txt:285:      58: invokespecial #479                // Method ne
+t/minecraft/client/PeriodicNotificationManager."<init>":(Lnet/minecraft/resourc
+es/Identifier;Lit/unimi/dsi/fastutil/objects/Object2BooleanFunction;)V
+  runTick_dump.txt:286:      61: putfield      #481                // Field 
+regionalCompliancies:Lnet/minecraft/client/PeriodicNotificationManager;
+  runTick_dump.txt:287:      64: aload_0
+  runTick_dump.txt:288:      65: invokestatic  #485                // Method 
+net/minecraft/util/Util.getNanos:()J
+  runTick_dump.txt:289:      68: putfield      #487                // Field 
+lastNanoTime:J
+  runTick_dump.txt:290:      71: aload_0
+  runTick_dump.txt:291:      72: iconst_1
+  runTick_dump.txt:292:      73: putfield      #489                // Field 
+smartCull:Z
+  runTick_dump.txt:293:      76: aload_0
+  runTick_dump.txt:294:      77: getstatic     #494                // Field net
+/minecraft/util/profiling/metrics/profiling/InactiveMetricsRecorder.INSTANCE:Ln
+et/minecraft/util/profiling/metrics/profiling/MetricsRecorder;
+  runTick_dump.txt:295:      80: putfield      #496                // Field met
+ricsRecorder:Lnet/minecraft/util/profiling/metrics/profiling/MetricsRecorder;
+  runTick_dump.txt:296:      83: aload_0
+  runTick_dump.txt:2808:      24: aload_0
+  runTick_dump.txt:2809:      25: getfield      #2399               // Field 
+pendingReload:Ljava/util/concurrent/CompletableFuture;
+  runTick_dump.txt:2810:      28: ifnull        65
+  runTick_dump.txt:2811:      31: aload_0
+  runTick_dump.txt:2812:      32: getfield      #2402               // Field 
+overlay:Lnet/minecraft/client/gui/screens/Overlay;
+  runTick_dump.txt:2813:      35: instanceof    #1601               // class 
+net/minecraft/client/gui/screens/LoadingOverlay
+  runTick_dump.txt:2814:      38: ifne          65
+  runTick_dump.txt:2815:      41: aload_0
+  runTick_dump.txt:2816:      42: getfield      #2399               // Field 
+pendingReload:Ljava/util/concurrent/CompletableFuture;
+  runTick_dump.txt:2817:      45: astore_2
+  runTick_dump.txt:2818:      46: aload_0
+  runTick_dump.txt:2819:      47: aconst_null
+  runTick_dump.txt:2820:      48: putfield      #2399               // Field 
+pendingReload:Ljava/util/concurrent/CompletableFuture;
+  runTick_dump.txt:2821:      51: aload_0
+  runTick_dump.txt:2822:      52: invokevirtual #2760               // Method 
+reloadResourcePacks:()Ljava/util/concurrent/CompletableFuture;
+  runTick_dump.txt:2823:      55: aload_2
+  runTick_dump.txt:2824:      56: invokedynamic #2768,  0           // 
+InvokeDynamic 
+#33:run:(Ljava/util/concurrent/CompletableFuture;)Ljava/lang/Runnable;
+  runTick_dump.txt:2825:      61: invokevirtual #2772               // Method j
+ava/util/concurrent/CompletableFuture.thenRun:(Ljava/lang/Runnable;)Ljava/util/
+concurrent/CompletableFuture;
+  runTick_dump.txt:2826:      64: pop
+  runTick_dump.txt:2827:      65: aload_0
+> runTick_dump.txt:2828:      66: getfield      #455                // Field 
+deltaTracker:Lnet/minecraft/client/DeltaTracker$Timer;
+  runTick_dump.txt:2829:      69: invokestatic  #2775               // Method 
+net/minecraft/util/Util.getMillis:()J
+  runTick_dump.txt:2830:      72: iload_1
+> runTick_dump.txt:2831:      73: invokevirtual #2779               // Method 
+net/minecraft/client/DeltaTracker$Timer.advanceTime:(JZ)I
+  runTick_dump.txt:2832:      76: istore_2
+  runTick_dump.txt:2833:      77: invokestatic  #2782               // Method n
+et/minecraft/util/profiling/Profiler.get:()Lnet/minecraft/util/profiling/Profil
+erFiller;
+  runTick_dump.txt:2834:      80: astore_3
+  runTick_dump.txt:2835:      81: iload_1
+  runTick_dump.txt:2836:      82: ifeq          328
+  runTick_dump.txt:2837:      85: aload_0
+  runTick_dump.txt:2838:      86: invokevirtual #2786               // Method 
+collectPerTickGizmos:()Lnet/minecraft/gizmos/Gizmos$TemporaryCollection;
+  runTick_dump.txt:2839:      89: astore        4
+  runTick_dump.txt:2840:      91: aload_3
+  runTick_dump.txt:2841:      92: ldc_w         #2788               // String 
+scheduledPacketProcessing
+  runTick_dump.txt:2842:      95: invokeinterface #2793,  2         // 
+InterfaceMethod 
+net/minecraft/util/profiling/ProfilerFiller.push:(Ljava/lang/String;)V
+  runTick_dump.txt:2843:     100: aload_0
+  runTick_dump.txt:2844:     101: getfield      #1745               // Field 
+packetProcessor:Lnet/minecraft/network/PacketProcessor;
+  runTick_dump.txt:2845:     104: invokevirtual #2796               // Method 
+net/minecraft/network/PacketProcessor.processQueuedPackets:()V
+  runTick_dump.txt:2846:     107: aload_3
+  runTick_dump.txt:2847:     108: ldc_w         #2798               // String 
+scheduledExecutables
+  runTick_dump.txt:2848:     111: invokeinterface #2801,  2         // 
+InterfaceMethod 
+net/minecraft/util/profiling/ProfilerFiller.popPush:(Ljava/lang/String;)V
+  runTick_dump.txt:2849:     116: aload_0
+  runTick_dump.txt:2850:     117: invokevirtual #2804               // Method 
+runAllTasks:()V
+  runTick_dump.txt:2851:     120: aload_3
+  runTick_dump.txt:3009:     509: invokevirtual #2900               // Method 
+getMainRenderTarget:()Lcom/mojang/blaze3d/pipeline/RenderTarget;
+  runTick_dump.txt:3010:     512: astore        8
+  runTick_dump.txt:3011:     514: invokestatic  #986                // Method c
+om/mojang/blaze3d/systems/RenderSystem.getDevice:()Lcom/mojang/blaze3d/systems/
+GpuDevice;
+  runTick_dump.txt:3012:     517: invokeinterface #2904,  1         // 
+InterfaceMethod com/mojang/blaze3d/systems/GpuDevice.createCommandEncoder:()Lco
+m/mojang/blaze3d/systems/CommandEncoder;
+  runTick_dump.txt:3013:     522: aload         8
+  runTick_dump.txt:3014:     524: invokevirtual #2908               // Method c
+om/mojang/blaze3d/pipeline/RenderTarget.getColorTexture:()Lcom/mojang/blaze3d/t
+extures/GpuTexture;
+  runTick_dump.txt:3015:     527: iconst_0
+  runTick_dump.txt:3016:     528: aload         8
+  runTick_dump.txt:3017:     530: invokevirtual #2911               // Method c
+om/mojang/blaze3d/pipeline/RenderTarget.getDepthTexture:()Lcom/mojang/blaze3d/t
+extures/GpuTexture;
+  runTick_dump.txt:3018:     533: dconst_1
+  runTick_dump.txt:3019:     534: invokeinterface #2917,  6         // 
+InterfaceMethod com/mojang/blaze3d/systems/CommandEncoder.clearColorAndDepthTex
+tures:(Lcom/mojang/blaze3d/textures/GpuTexture;ILcom/mojang/blaze3d/textures/Gp
+uTexture;D)V
+  runTick_dump.txt:3020:     539: aload_3
+  runTick_dump.txt:3021:     540: ldc_w         #2918               // String 
+gameRenderer
+  runTick_dump.txt:3022:     543: invokeinterface #2793,  2         // 
+InterfaceMethod 
+net/minecraft/util/profiling/ProfilerFiller.push:(Ljava/lang/String;)V
+  runTick_dump.txt:3023:     548: aload_0
+  runTick_dump.txt:3024:     549: getfield      #2688               // Field 
+noRender:Z
+  runTick_dump.txt:3025:     552: ifne          567
+  runTick_dump.txt:3026:     555: aload_0
+  runTick_dump.txt:3027:     556: getfield      #1386               // Field 
+gameRenderer:Lnet/minecraft/client/renderer/GameRenderer;
+  runTick_dump.txt:3028:     559: aload_0
+> runTick_dump.txt:3029:     560: getfield      #455                // Field 
+deltaTracker:Lnet/minecraft/client/DeltaTracker$Timer;
+  runTick_dump.txt:3030:     563: iload_1
+> runTick_dump.txt:3031:     564: invokevirtual #2921               // Method n
+et/minecraft/client/renderer/GameRenderer.render:(Lnet/minecraft/client/DeltaTr
+acker;Z)V
+  runTick_dump.txt:3032:     567: aload_3
+  runTick_dump.txt:3033:     568: ldc_w         #2923               // String 
+blit
+  runTick_dump.txt:3034:     571: invokeinterface #2801,  2         // 
+InterfaceMethod 
+net/minecraft/util/profiling/ProfilerFiller.popPush:(Ljava/lang/String;)V
+  runTick_dump.txt:3035:     576: aload_0
+  runTick_dump.txt:3036:     577: getfield      #863                // Field 
+window:Lcom/mojang/blaze3d/platform/Window;
+  runTick_dump.txt:3037:     580: invokevirtual #2926               // Method 
+com/mojang/blaze3d/platform/Window.isMinimized:()Z
+  runTick_dump.txt:3038:     583: ifne          591
+  runTick_dump.txt:3039:     586: aload         8
+  runTick_dump.txt:3040:     588: invokevirtual #2929               // Method 
+com/mojang/blaze3d/pipeline/RenderTarget.blitToScreen:()V
+  runTick_dump.txt:3041:     591: aload_0
+  runTick_dump.txt:3042:     592: invokestatic  #485                // Method 
+net/minecraft/util/Util.getNanos:()J
+  runTick_dump.txt:3043:     595: lload         6
+  runTick_dump.txt:3044:     597: lsub
+  runTick_dump.txt:3045:     598: putfield      #2931               // Field 
+frameTimeNs:J
+  runTick_dump.txt:3046:     601: iload         4
+  runTick_dump.txt:3047:     603: ifeq          616
+  runTick_dump.txt:3048:     606: aload_0
+  runTick_dump.txt:3049:     607: invokestatic  #2892               // Method c
+om/mojang/blaze3d/systems/TimerQuery.getInstance:()Lcom/mojang/blaze3d/systems/
+TimerQuery;
+  runTick_dump.txt:3050:     610: invokevirtual #2935               // Method c
+om/mojang/blaze3d/systems/TimerQuery.endProfile:()Lcom/mojang/blaze3d/systems/T
+imerQuery$FrameProfile;
+  runTick_dump.txt:3051:     613: putfield      #2717               // Field 
+currentFrameProfile:Lcom/mojang/blaze3d/systems/TimerQuery$FrameProfile;
+  runTick_dump.txt:3142:     828: putfield      #2963               // Field 
+pause:Z
+  runTick_dump.txt:3143:     831: iload         5
+  runTick_dump.txt:3144:     833: ifne          866
+  runTick_dump.txt:3145:     836: aload_0
+  runTick_dump.txt:3146:     837: getfield      #2963               // Field 
+pause:Z
+  runTick_dump.txt:3147:     840: ifeq          866
+  runTick_dump.txt:3148:     843: aload_0
+  runTick_dump.txt:3149:     844: getfield      #1115               // Field 
+soundManager:Lnet/minecraft/client/sounds/SoundManager;
+  runTick_dump.txt:3150:     847: iconst_2
+  runTick_dump.txt:3151:     848: anewarray     #2974               // class 
+net/minecraft/sounds/SoundSource
+  runTick_dump.txt:3152:     851: dup
+  runTick_dump.txt:3153:     852: iconst_0
+  runTick_dump.txt:3154:     853: getstatic     #2978               // Field 
+net/minecraft/sounds/SoundSource.MUSIC:Lnet/minecraft/sounds/SoundSource;
+  runTick_dump.txt:3155:     856: aastore
+  runTick_dump.txt:3156:     857: dup
+  runTick_dump.txt:3157:     858: iconst_1
+  runTick_dump.txt:3158:     859: getstatic     #2981               // Field 
+net/minecraft/sounds/SoundSource.UI:Lnet/minecraft/sounds/SoundSource;
+  runTick_dump.txt:3159:     862: aastore
+  runTick_dump.txt:3160:     863: invokevirtual #2985               // Method n
+et/minecraft/client/sounds/SoundManager.pauseAllExcept:([Lnet/minecraft/sounds/
+SoundSource;)V
+  runTick_dump.txt:3161:     866: aload_0
+> runTick_dump.txt:3162:     867: getfield      #455                // Field 
+deltaTracker:Lnet/minecraft/client/DeltaTracker$Timer;
+  runTick_dump.txt:3163:     870: aload_0
+  runTick_dump.txt:3164:     871: getfield      #2963               // Field 
+pause:Z
+> runTick_dump.txt:3165:     874: invokevirtual #2988               // Method 
+net/minecraft/client/DeltaTracker$Timer.updatePauseState:(Z)V
+  runTick_dump.txt:3166:     877: aload_0
+> runTick_dump.txt:3167:     878: getfield      #455                // Field 
+deltaTracker:Lnet/minecraft/client/DeltaTracker$Timer;
+  runTick_dump.txt:3168:     881: aload_0
+  runTick_dump.txt:3169:     882: invokevirtual #2813               // Method 
+isLevelRunningNormally:()Z
+  runTick_dump.txt:3170:     885: ifne          892
+  runTick_dump.txt:3171:     888: iconst_1
+  runTick_dump.txt:3172:     889: goto          893
+  runTick_dump.txt:3173:     892: iconst_0
+> runTick_dump.txt:3174:     893: invokevirtual #2991               // Method 
+net/minecraft/client/DeltaTracker$Timer.updateFrozenState:(Z)V
+  runTick_dump.txt:3175:     896: invokestatic  #485                // Method 
+net/minecraft/util/Util.getNanos:()J
+  runTick_dump.txt:3176:     899: lstore        6
+  runTick_dump.txt:3177:     901: lload         6
+  runTick_dump.txt:3178:     903: aload_0
+  runTick_dump.txt:3179:     904: getfield      #487                // Field 
+lastNanoTime:J
+  runTick_dump.txt:3180:     907: lsub
+  runTick_dump.txt:3181:     908: lstore        8
+  runTick_dump.txt:3182:     910: iload         4
+  runTick_dump.txt:3183:     912: ifeq          921
+  runTick_dump.txt:3184:     915: aload_0
+  runTick_dump.txt:3185:     916: lload         8
+  runTick_dump.txt:3186:     918: putfield      #2993               // Field 
+savedCpuDuration:J
+  runTick_dump.txt:3187:     921: aload_0
+  runTick_dump.txt:3188:     922: invokevirtual #2224               // Method 
+getDebugOverlay:()Lnet/minecraft/client/gui/components/DebugScreenOverlay;
+  runTick_dump.txt:3189:     925: lload         8
+  runTick_dump.txt:3190:     927: invokevirtual #2997               // Method 
+net/minecraft/client/gui/components/DebugScreenOverlay.logFrameDuration:(J)V
+  runTick_dump.txt:3191:     930: aload_0
+  runTick_dump.txt:3192:     931: lload         6
+  runTick_dump.txt:3193:     933: putfield      #487                // Field 
+lastNanoTime:J
+  runTick_dump.txt:3194:     936: aload_3
+  runTick_dump.txt:6472:       4: areturn
+  runTick_dump.txt:6473:
+  runTick_dump.txt:6474:  public 
+net.minecraft.client.renderer.entity.ItemRenderer getItemRenderer();
+  runTick_dump.txt:6475:    Code:
+  runTick_dump.txt:6476:       0: aload_0
+  runTick_dump.txt:6477:       1: getfield      #1229               // Field 
+itemRenderer:Lnet/minecraft/client/renderer/entity/ItemRenderer;
+  runTick_dump.txt:6478:       4: areturn
+  runTick_dump.txt:6479:
+  runTick_dump.txt:6480:  public net.minecraft.client.renderer.MapRenderer 
+getMapRenderer();
+  runTick_dump.txt:6481:    Code:
+  runTick_dump.txt:6482:       0: aload_0
+  runTick_dump.txt:6483:       1: getfield      #1243               // Field 
+mapRenderer:Lnet/minecraft/client/renderer/MapRenderer;
+  runTick_dump.txt:6484:       4: areturn
+  runTick_dump.txt:6485:
+  runTick_dump.txt:6486:  public com.mojang.datafixers.DataFixer 
+getFixerUpper();
+  runTick_dump.txt:6487:    Code:
+  runTick_dump.txt:6488:       0: aload_0
+  runTick_dump.txt:6489:       1: getfield      #755                // Field 
+fixerUpper:Lcom/mojang/datafixers/DataFixer;
+  runTick_dump.txt:6490:       4: areturn
+  runTick_dump.txt:6491:
+> runTick_dump.txt:6492:  public net.minecraft.client.DeltaTracker 
+getDeltaTracker();
+  runTick_dump.txt:6493:    Code:
+  runTick_dump.txt:6494:       0: aload_0
+> runTick_dump.txt:6495:       1: getfield      #455                // Field 
+deltaTracker:Lnet/minecraft/client/DeltaTracker$Timer;
+  runTick_dump.txt:6496:       4: areturn
+  runTick_dump.txt:6497:
+  runTick_dump.txt:6498:  public net.minecraft.client.color.block.BlockColors 
+getBlockColors();
+  runTick_dump.txt:6499:    Code:
+  runTick_dump.txt:6500:       0: aload_0
+  runTick_dump.txt:6501:       1: getfield      #1207               // Field 
+blockColors:Lnet/minecraft/client/color/block/BlockColors;
+  runTick_dump.txt:6502:       4: areturn
+  runTick_dump.txt:6503:
+  runTick_dump.txt:6504:  public boolean showOnlyReducedInfo();
+  runTick_dump.txt:6505:    Code:
+  runTick_dump.txt:6506:       0: aload_0
+  runTick_dump.txt:6507:       1: getfield      #2642               // Field 
+player:Lnet/minecraft/client/player/LocalPlayer;
+  runTick_dump.txt:6508:       4: ifnull        17
+  runTick_dump.txt:6509:       7: aload_0
+  runTick_dump.txt:6510:       8: getfield      #2642               // Field 
+player:Lnet/minecraft/client/player/LocalPlayer;
+  runTick_dump.txt:6511:      11: invokevirtual #4851               // Method 
+net/minecraft/client/player/LocalPlayer.isReducedDebugInfo:()Z
+  runTick_dump.txt:6512:      14: ifne          36
+  runTick_dump.txt:6513:      17: aload_0
+  runTick_dump.txt:6514:      18: getfield      #770                // Field 
+options:Lnet/minecraft/client/Options;
+  runTick_dump.txt:6515:      21: invokevirtual #4854               // Method n
+et/minecraft/client/Options.reducedDebugInfo:()Lnet/minecraft/client/OptionInst
+ance;
+  runTick_dump.txt:6724:     322: fload         9
+  runTick_dump.txt:6725:     324: invokevirtual #4912               // Method 
+net/minecraft/client/player/LocalPlayer.setYRot:(F)V
+  runTick_dump.txt:6726:     327: aload_0
+  runTick_dump.txt:6727:     328: getfield      #2642               // Field 
+player:Lnet/minecraft/client/player/LocalPlayer;
+  runTick_dump.txt:6728:     331: ldc_w         #4916               // float 
+90.0f
+  runTick_dump.txt:6729:     334: invokevirtual #4915               // Method 
+net/minecraft/client/player/LocalPlayer.setXRot:(F)V
+  runTick_dump.txt:6730:     337: aload_0
+  runTick_dump.txt:6731:     338: getfield      #2642               // Field 
+player:Lnet/minecraft/client/player/LocalPlayer;
+  runTick_dump.txt:6732:     341: aload_0
+  runTick_dump.txt:6733:     342: getfield      #2642               // Field 
+player:Lnet/minecraft/client/player/LocalPlayer;
+  runTick_dump.txt:6734:     345: invokevirtual #4877               // Method 
+net/minecraft/client/player/LocalPlayer.getYRot:()F
+  runTick_dump.txt:6735:     348: putfield      #4884               // Field 
+net/minecraft/client/player/LocalPlayer.yRotO:F
+  runTick_dump.txt:6736:     351: aload_0
+  runTick_dump.txt:6737:     352: getfield      #2642               // Field 
+player:Lnet/minecraft/client/player/LocalPlayer;
+  runTick_dump.txt:6738:     355: aload_0
+  runTick_dump.txt:6739:     356: getfield      #2642               // Field 
+player:Lnet/minecraft/client/player/LocalPlayer;
+  runTick_dump.txt:6740:     359: invokevirtual #4874               // Method 
+net/minecraft/client/player/LocalPlayer.getXRot:()F
+  runTick_dump.txt:6741:     362: putfield      #4881               // Field 
+net/minecraft/client/player/LocalPlayer.xRotO:F
+  runTick_dump.txt:6742:     365: aload_0
+  runTick_dump.txt:6743:     366: getfield      #1386               // Field 
+gameRenderer:Lnet/minecraft/client/renderer/GameRenderer;
+> runTick_dump.txt:6744:     369: getstatic     #4923               // Field 
+net/minecraft/client/DeltaTracker.ONE:Lnet/minecraft/client/DeltaTracker;
+> runTick_dump.txt:6745:     372: invokevirtual #4927               // Method n
+et/minecraft/client/renderer/GameRenderer.updateCamera:(Lnet/minecraft/client/D
+eltaTracker;)V
+  runTick_dump.txt:6746:     375: aload_0
+  runTick_dump.txt:6747:     376: getfield      #1386               // Field 
+gameRenderer:Lnet/minecraft/client/renderer/GameRenderer;
+> runTick_dump.txt:6748:     379: getstatic     #4923               // Field 
+net/minecraft/client/DeltaTracker.ONE:Lnet/minecraft/client/DeltaTracker;
+> runTick_dump.txt:6749:     382: invokevirtual #4930               // Method n
+et/minecraft/client/renderer/GameRenderer.renderLevel:(Lnet/minecraft/client/De
+ltaTracker;)V
+  runTick_dump.txt:6750:     385: ldc2_w        #4931               // long 10l
+  runTick_dump.txt:6751:     388: invokestatic  #4935               // Method 
+java/lang/Thread.sleep:(J)V
+  runTick_dump.txt:6752:     391: goto          396
+  runTick_dump.txt:6753:     394: astore        13
+  runTick_dump.txt:6754:     396: aload_1
+  runTick_dump.txt:6755:     397: iload         12
+  runTick_dump.txt:6756:     399: invokedynamic #4940,  0           // 
+InvokeDynamic #75:makeConcatWithConstants:(I)Ljava/lang/String;
+  runTick_dump.txt:6757:     404: aload         7
+  runTick_dump.txt:6758:     406: iconst_4
+  runTick_dump.txt:6759:     407: invokedynamic #4945,  0           // 
+InvokeDynamic #76:accept:()Ljava/util/function/Consumer;
+  runTick_dump.txt:6760:     412: invokestatic  #4951               // Method n
+et/minecraft/client/Screenshot.grab:(Ljava/io/File;Ljava/lang/String;Lcom/mojan
+g/blaze3d/pipeline/RenderTarget;ILjava/util/function/Consumer;)V
+  runTick_dump.txt:6761:     415: iinc          12, 1
+  runTick_dump.txt:6762:     418: goto          144
+  runTick_dump.txt:6763:     421: aload_1
+  runTick_dump.txt:6764:     422: invokevirtual #3293               // Method 
+java/io/File.getName:()Ljava/lang/String;
+  runTick_dump.txt:6765:     425: invokestatic  #4954               // 
+InterfaceMethod net/minecraft/network/chat/Component.literal:(Ljava/lang/String
+;)Lnet/minecraft/network/chat/MutableComponent;
+  runTick_dump.txt:6766:     428: getstatic     #4960               // Field 
+net/minecraft/ChatFormatting.UNDERLINE:Lnet/minecraft/ChatFormatting;
+  runTick_dump.txt:6767:     431: invokevirtual #4966               // Method n
+et/minecraft/network/chat/MutableComponent.withStyle:(Lnet/minecraft/ChatFormat
+ting;)Lnet/minecraft/network/chat/MutableComponent;
+  runTick_dump.txt:6768:     434: aload_1
+  runTick_dump.txt:6769:     435: invokedynamic #4976,  0           // 
+InvokeDynamic #77:apply:(Ljava/io/File;)Ljava/util/function/UnaryOperator;
+  runTick_dump.txt:7039:       4: areturn
+  runTick_dump.txt:7040:
+  runTick_dump.txt:7041:  public net.minecraft.client.CommandHistory 
+commandHistory();
+  runTick_dump.txt:7042:    Code:
+  runTick_dump.txt:7043:       0: aload_0
+  runTick_dump.txt:7044:       1: getfield      #1103               // Field 
+commandHistory:Lnet/minecraft/client/CommandHistory;
+  runTick_dump.txt:7045:       4: areturn
+  runTick_dump.txt:7046:
+  runTick_dump.txt:7047:  public 
+net.minecraft.world.level.validation.DirectoryValidator directoryValidator();
+  runTick_dump.txt:7048:    Code:
+  runTick_dump.txt:7049:       0: aload_0
+  runTick_dump.txt:7050:       1: getfield      #564                // Field 
+directoryValidator:Lnet/minecraft/world/level/validation/DirectoryValidator;
+  runTick_dump.txt:7051:       4: areturn
+  runTick_dump.txt:7052:
+  runTick_dump.txt:7053:  public 
+net.minecraft.client.renderer.PlayerSkinRenderCache playerSkinRenderCache();
+  runTick_dump.txt:7054:    Code:
+  runTick_dump.txt:7055:       0: aload_0
+  runTick_dump.txt:7056:       1: getfield      #1153               // Field 
+playerSkinRenderCache:Lnet/minecraft/client/renderer/PlayerSkinRenderCache;
+  runTick_dump.txt:7057:       4: areturn
+  runTick_dump.txt:7058:
+> runTick_dump.txt:7059:  private float getTickTargetMillis(float);
+  runTick_dump.txt:7060:    Code:
+  runTick_dump.txt:7061:       0: aload_0
+  runTick_dump.txt:7062:       1: getfield      #1348               // Field 
+level:Lnet/minecraft/client/multiplayer/ClientLevel;
+  runTick_dump.txt:7063:       4: ifnull        31
+  runTick_dump.txt:7064:       7: aload_0
+  runTick_dump.txt:7065:       8: getfield      #1348               // Field 
+level:Lnet/minecraft/client/multiplayer/ClientLevel;
+  runTick_dump.txt:7066:      11: invokevirtual #2833               // Method n
+et/minecraft/client/multiplayer/ClientLevel.tickRateManager:()Lnet/minecraft/wo
+rld/TickRateManager;
+  runTick_dump.txt:7067:      14: astore_2
+  runTick_dump.txt:7068:      15: aload_2
+  runTick_dump.txt:7069:      16: invokevirtual #2838               // Method 
+net/minecraft/world/TickRateManager.runsNormally:()Z
+  runTick_dump.txt:7070:      19: ifeq          31
+  runTick_dump.txt:7071:      22: fload_1
+  runTick_dump.txt:7072:      23: aload_2
+> runTick_dump.txt:7073:      24: invokevirtual #5037               // Method 
+net/minecraft/world/TickRateManager.millisecondsPerTick:()F
+  runTick_dump.txt:7074:      27: invokestatic  #5040               // Method 
+java/lang/Math.max:(FF)F
+  runTick_dump.txt:7075:      30: freturn
+  runTick_dump.txt:7076:      31: fload_1
+  runTick_dump.txt:7077:      32: freturn
+  runTick_dump.txt:7078:
+  runTick_dump.txt:7079:  public 
+net.minecraft.client.renderer.item.ItemModelResolver getItemModelResolver();
+  runTick_dump.txt:7080:    Code:
+  runTick_dump.txt:7081:       0: aload_0
+  runTick_dump.txt:7082:       1: getfield      #1224               // Field 
+itemModelResolver:Lnet/minecraft/client/renderer/item/ItemModelResolver;
+  runTick_dump.txt:7083:       4: areturn
+  runTick_dump.txt:7084:
+  runTick_dump.txt:7085:  public boolean canInterruptScreen();
+  runTick_dump.txt:7086:    Code:
+  runTick_dump.txt:7087:       0: aload_0
+  runTick_dump.txt:7088:       1: getfield      #2629               // Field 
+screen:Lnet/minecraft/client/gui/screens/Screen;
+  runTick_dump.txt:7089:       4: ifnull        17
+  runTick_dump.txt:7090:       7: aload_0
+  runTick_dump.txt:7091:       8: getfield      #2629               // Field 
+screen:Lnet/minecraft/client/gui/screens/Screen;
+  runTick_dump.txt:7092:      11: invokevirtual #5047               // Method 
+net/minecraft/client/gui/screens/Screen.canInterruptWithAnotherScreen:()Z
+  runTick_dump.txt:7093:      14: ifeq          28
+
+

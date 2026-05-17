@@ -1,0 +1,7 @@
+﻿
+net/minecraft/client/DeltaTracker.class
+net/minecraft/client/Minecraft.class
+net/minecraft/client/DeltaTracker$DefaultValue.class
+net/minecraft/client/DeltaTracker$Timer.class
+
+

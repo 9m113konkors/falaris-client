@@ -15,6 +15,6 @@ public class GuiMixin {
     @Inject(method = "render", at = @At("TAIL"))
     private void onRender(GuiGraphics graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         HUD.render(graphics, deltaTracker.getGameTimeDeltaTicks());
-        ModuleManager.INSTANCE.onRender2D();
+        ModuleManager.INSTANCE.onRender2D(graphics);
     }
 }

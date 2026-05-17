@@ -24,28 +24,32 @@ public class ESP extends Module {
 
     @Override
     public void onRender3D(Camera camera, float tickDelta) {
-        if (mc.level == null || mc.player == null) {
-            return;
-        }
-
-        PoseStack poseStack = new PoseStack();
-        Vec3 cameraPos = camera.position();
-        for (Entity entity : mc.level.entitiesForRendering()) {
-            if (!(entity instanceof Player player) || player == mc.player) {
-                continue;
-            }
-            if (!showTeammates.getValue() && player.isAlliedTo(mc.player)) {
-                continue;
+        try {
+            if (mc.level == null || mc.player == null) {
+                return;
             }
 
-            double x = player.xo + (player.getX() - player.xo) * tickDelta - cameraPos.x;
-            double y = player.yo + (player.getY() - player.yo) * tickDelta - cameraPos.y;
-            double z = player.zo + (player.getZ() - player.zo) * tickDelta - cameraPos.z;
-            AABB box = player.getBoundingBox()
-                    .move(-player.getX(), -player.getY(), -player.getZ())
-                    .move(x, y, z);
+            PoseStack poseStack = new PoseStack();
+            Vec3 cameraPos = camera.position();
+            for (Entity entity : mc.level.entitiesForRendering()) {
+                if (!(entity instanceof Player player) || player == mc.player) {
+                    continue;
+                }
+                if (!showTeammates.getValue() && player.isAlliedTo(mc.player)) {
+                    continue;
+                }
 
-            Render3D.drawBox(poseStack, box, color.red(), color.green(), color.blue(), color.alpha(), lineWidth.getValue().floatValue());
+                double x = player.xo + (player.getX() - player.xo) * tickDelta - cameraPos.x;
+                double y = player.yo + (player.getY() - player.yo) * tickDelta - cameraPos.y;
+                double z = player.zo + (player.getZ() - player.zo) * tickDelta - cameraPos.z;
+                AABB box = player.getBoundingBox()
+                        .move(-player.getX(), -player.getY(), -player.getZ())
+                        .move(x, y, z);
+
+                Render3D.drawBox(poseStack, box, color.red(), color.green(), color.blue(), color.alpha(), lineWidth.getValue().floatValue());
+            }
+        } catch (Throwable t) {
+            t.printStackTrace();
         }
     }
 }

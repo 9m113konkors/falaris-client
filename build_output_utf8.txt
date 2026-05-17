@@ -1,0 +1,593 @@
+﻿
+> Configure project :
+Fabric Loom: 1.16.2
+
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+
+> Task :compileClientJava FAILED
+.\gradlew.bat : C:\Users\faari\projects\src\client\java\com\falaris\client\Fala
+risClient.java:15: error: cannot find symbol
+At line:1 char:1
++ .\gradlew.bat build --stacktrace > build_output.txt 2>&1 ; if ($LASTE ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\faari\...not find symbol 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+        boolean clickGuiKeyDown = 
+InputConstants.isKeyDown(client.getWindow().getWindowId(), 
+GLFW.GLFW_KEY_RIGHT_SHIFT);
+                                                                             ^
+  symbol:   method getWindowId()
+  location: class Window
+C:\Users\faari\projects\src\client\java\com\falaris\client\mixin\GuiMixin.java:
+18: error: method onRender2D in class ModuleManager cannot be applied to given 
+types;
+        ModuleManager.INSTANCE.onRender2D();
+                              ^
+  required: GuiGraphics
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+C:\Users\faari\projects\src\client\java\com\falaris\client\mixin\TimerMixin.jav
+a:13: error: cannot find symbol
+        return client.getMsPerTick() / TimerModule.timerSpeed;
+                     ^
+  symbol:   method getMsPerTick()
+  location: variable client of type Minecraft
+C:\Users\faari\projects\src\client\java\com\falaris\client\modules\movement\NoF
+all.java:17: error: constructor StatusOnly in class StatusOnly cannot be 
+applied to given types;
+                mc.player.connection.send(new 
+ServerboundMovePlayerPacket.StatusOnly(true));
+                                          ^
+  required: boolean,boolean
+  found:    boolean
+  reason: actual and formal argument lists differ in length
+C:\Users\faari\projects\src\client\java\com\falaris\client\modules\render\Trace
+rs.java:35: error: method drawLine in class Render3D cannot be applied to 
+given types;
+            Render3D.drawLine(poseStack, (float)eyes.x, (float)eyes.y, 
+(float)eyes.z, (float)x, (float)(y + player.getEyeHeight()/2), (float)z, 
+color.red(), color.green(), color.blue(), color.alpha());
+                    ^
+  required: 
+PoseStack,float,float,float,float,float,float,float,float,float,float,float
+  found:    
+PoseStack,float,float,float,float,float,float,float,float,float,float
+  reason: actual and formal argument lists differ in length
+C:\Users\faari\projects\src\client\java\com\falaris\client\ui\clickgui\ClickGUI
+.java:86: error: method mouseClicked in interface ContainerEventHandler cannot 
+be applied to given types;
+        return super.mouseClicked(mx, my, b);
+                    ^
+  required: MouseButtonEvent,boolean
+  found:    double,double,int
+  reason: actual and formal argument lists differ in length
+Note: C:\Users\faari\projects\src\client\java\com\falaris\client\modules\Module
+Manager.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+6 errors
+
+[Incubating] Problems report is available at: file:///C:/Users/faari/projects/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileClientJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\faari\projects\src\client\java\com\falaris\client\mixin\GuiMixin.jav
+a:18: error: method onRender2D in class ModuleManager cannot be applied to 
+given types;
+          ModuleManager.INSTANCE.onRender2D();
+                                ^
+    required: GuiGraphics
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  C:\Users\faari\projects\src\client\java\com\falaris\client\modules\movement\N
+oFall.java:17: error: constructor StatusOnly in class StatusOnly cannot be 
+applied to given types;
+                  mc.player.connection.send(new 
+ServerboundMovePlayerPacket.StatusOnly(true));
+                                            ^
+    required: boolean,boolean
+    found:    boolean
+    reason: actual and formal argument lists differ in length
+  C:\Users\faari\projects\src\client\java\com\falaris\client\modules\render\Tra
+cers.java:35: error: method drawLine in class Render3D cannot be applied to 
+given types;
+              Render3D.drawLine(poseStack, (float)eyes.x, (float)eyes.y, 
+(float)eyes.z, (float)x, (float)(y + player.getEyeHeight()/2), (float)z, 
+color.red(), color.green(), color.blue(), color.alpha());
+                      ^
+    required: 
+PoseStack,float,float,float,float,float,float,float,float,float,float,float
+    found:    
+PoseStack,float,float,float,float,float,float,float,float,float,float
+    reason: actual and formal argument lists differ in length
+  C:\Users\faari\projects\src\client\java\com\falaris\client\ui\clickgui\ClickG
+UI.java:86: error: method mouseClicked in interface ContainerEventHandler 
+cannot be applied to given types;
+          return super.mouseClicked(mx, my, b);
+                      ^
+    required: MouseButtonEvent,boolean
+    found:    double,double,int
+    reason: actual and formal argument lists differ in length
+  Note: C:\Users\faari\projects\src\client\java\com\falaris\client\modules\Modu
+leManager.java uses unchecked or unsafe operations.
+  Note: Recompile with -Xlint:unchecked for details.
+  C:\Users\faari\projects\src\client\java\com\falaris\client\FalarisClient.java
+:15: error: cannot find symbol
+          boolean clickGuiKeyDown = 
+InputConstants.isKeyDown(client.getWindow().getWindowId(), 
+GLFW.GLFW_KEY_RIGHT_SHIFT);
+                                                                               
+^
+    symbol:   method getWindowId()
+    location: class Window
+  C:\Users\faari\projects\src\client\java\com\falaris\client\mixin\TimerMixin.j
+ava:13: error: cannot find symbol
+          return client.getMsPerTick() / TimerModule.timerSpeed;
+                       ^
+    symbol:   method getMsPerTick()
+    location: variable client of type Minecraft
+  6 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by 
+Develocity).
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task 
+':compileClientJava'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$e
+xecuteIfValid$1(ExecuteActionsTaskExecuter.java:135)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:288)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeI
+fValid(ExecuteActionsTaskExecuter.java:133)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(
+ExecuteActionsTaskExecuter.java:121)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecute
+r.execute(ProblemsTaskPathTrackingTaskExecuter.java:41)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.ex
+ecute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.exec
+ute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execu
+te(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(Skip
+OnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(
+CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTa
+sk(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(Even
+tFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(Even
+tFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuil
+dOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(Eve
+ntFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.DefaultNodeExecutor.executeLocalTaskNode(DefaultN
+odeExecutor.java:55)
+	at org.gradle.execution.plan.DefaultNodeExecutor.execute(DefaultNodeExecutor.j
+ava:34)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutor
+sAction.execute(DefaultTaskExecutionGraph.java:355)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutor
+sAction.execute(DefaultTaskExecutionGraph.java:343)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwar
+eExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:339)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOp
+erationRef.java:84)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwar
+eExecutionAction.execute(DefaultTaskExecutionGraph.java:339)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwar
+eExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(Defaul
+tPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPla
+nExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.j
+ava:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithService
+s(DefaultTaskExecutionGraph.java:146)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTas
+kExecutionGraph.java:131)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecut
+ionAction.java:35)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.c
+all(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.c
+all(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuil
+dOperationRunner.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildO
+perationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTas
+ks$11(DefaultBuildLifecycleController.java:323)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTrans
+itionController.java:304)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$9(
+StateTransitionController.java:215)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.j
+ava:45)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTran
+sitionController.java:215)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(Defa
+ultBuildLifecycleController.java:314)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkG
+raph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.lambda$withLocksAcquired
+$0(DefaultWorkerLeaseService.java:275)
+	at org.gradle.internal.work.ResourceLockStatistics$1.measure(ResourceLockStati
+stics.java:43)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocksAcquired(Defaul
+tWorkerLeaseService.java:273)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerL
+easeService.java:265)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(Defaul
+tWorkerLeaseService.java:128)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildCont
+roller.java:182)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuil
+dController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda
+$run$0(DefaultBuildController.java:199)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOp
+erationRef.java:84)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(De
+faultBuildController.java:199)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExec
+ute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManage
+dExecutor.java:47)
+Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: 
+Compilation failed; see the compiler output below.
+C:\Users\faari\projects\src\client\java\com\falaris\client\FalarisClient.java:1
+5: error: cannot find symbol
+        boolean clickGuiKeyDown = 
+InputConstants.isKeyDown(client.getWindow().getWindowId(), 
+GLFW.GLFW_KEY_RIGHT_SHIFT);
+                                                                             ^
+  symbol:   method getWindowId()
+  location: class Window
+C:\Users\faari\projects\src\client\java\com\falaris\client\mixin\GuiMixin.java:
+18: error: method onRender2D in class ModuleManager cannot be applied to given 
+types;
+        ModuleManager.INSTANCE.onRender2D();
+                              ^
+  required: GuiGraphics
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+C:\Users\faari\projects\src\client\java\com\falaris\client\mixin\TimerMixin.jav
+a:13: error: cannot find symbol
+        return client.getMsPerTick() / TimerModule.timerSpeed;
+                     ^
+  symbol:   method getMsPerTick()
+  location: variable client of type Minecraft
+C:\Users\faari\projects\src\client\java\com\falaris\client\modules\movement\NoF
+all.java:17: error: constructor StatusOnly in class StatusOnly cannot be 
+applied to given types;
+                mc.player.connection.send(new 
+ServerboundMovePlayerPacket.StatusOnly(true));
+                                          ^
+  required: boolean,boolean
+  found:    boolean
+  reason: actual and formal argument lists differ in length
+C:\Users\faari\projects\src\client\java\com\falaris\client\modules\render\Trace
+rs.java:35: error: method drawLine in class Render3D cannot be applied to 
+given types;
+            Render3D.drawLine(poseStack, (float)eyes.x, (float)eyes.y, 
+(float)eyes.z, (float)x, (float)(y + player.getEyeHeight()/2), (float)z, 
+color.red(), color.green(), color.blue(), color.alpha());
+                    ^
+  required: 
+PoseStack,float,float,float,float,float,float,float,float,float,float,float
+  found:    
+PoseStack,float,float,float,float,float,float,float,float,float,float
+  reason: actual and formal argument lists differ in length
+C:\Users\faari\projects\src\client\java\com\falaris\client\ui\clickgui\ClickGUI
+.java:86: error: method mouseClicked in interface ContainerEventHandler cannot 
+be applied to given types;
+        return super.mouseClicked(mx, my, b);
+                    ^
+  required: MouseButtonEvent,boolean
+  found:    double,double,int
+  reason: actual and formal argument lists differ in length
+Note: C:\Users\faari\projects\src\client\java\com\falaris\client\modules\Module
+Manager.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+6 errors
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompil
+er.java:89)
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompil
+er.java:50)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHa
+ndleErrors(NormalizingJavaCompiler.java:98)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(Norma
+lizingJavaCompiler.java:52)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(Norma
+lizingJavaCompiler.java:38)
+	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompile
+r.execute(AnnotationProcessorDiscoveringCompiler.java:52)
+	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompile
+r.execute(AnnotationProcessorDiscoveringCompiler.java:38)
+	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.
+execute(ModuleApplicationNameWritingCompiler.java:46)
+	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.
+execute(ModuleApplicationNameWritingCompiler.java:36)
+	at org.gradle.jvm.toolchain.internal.DefaultToolchainJavaCompiler.execute(Defa
+ultToolchainJavaCompiler.java:57)
+	at org.gradle.api.tasks.compile.JavaCompile.lambda$createToolchainCompiler$3(J
+avaCompile.java:206)
+	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.lambda$
+execute$0(SelectiveCompiler.java:101)
+	at org.gradle.api.internal.tasks.compile.incremental.transaction.CompileTransa
+ction.execute(CompileTransaction.java:108)
+	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute
+(SelectiveCompiler.java:95)
+	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute
+(SelectiveCompiler.java:44)
+	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringC
+ompiler.execute(IncrementalResultStoringCompiler.java:66)
+	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringC
+ompiler.execute(IncrementalResultStoringCompiler.java:52)
+	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCom
+piler$1.call(CompileJavaBuildOperationReportingCompiler.java:64)
+	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCom
+piler$1.call(CompileJavaBuildOperationReportingCompiler.java:48)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuil
+dOperationRunner.java:54)
+	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCom
+piler.execute(CompileJavaBuildOperationReportingCompiler.java:48)
+	at org.gradle.api.tasks.compile.JavaCompile.performCompilation(JavaCompile.jav
+a:224)
+	at org.gradle.api.tasks.compile.JavaCompile.performIncrementalCompilation(Java
+Compile.java:165)
+	at org.gradle.api.tasks.compile.JavaCompile.compile(JavaCompile.java:150)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute
+(IncrementalTaskAction.java:45)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(Stan
+dardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.execute(I
+ncrementalTaskAction.java:26)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(Stan
+dardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.j
+ava:259)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(Defaul
+tBuildOperationRunner.java:30)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(Defaul
+tBuildOperationRunner.java:27)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuild
+OperationRunner.java:48)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExe
+cution.java:244)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskEx
+ecution.java:227)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOu
+tputFiles(TaskExecution.java:210)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution
+.java:176)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep
+.java:167)
+	at 
+org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:47)
+	at 
+org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:137)
+	at 
+org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:134)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOpe
+rationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(Defaul
+tBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultB
+uildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuil
+dOperationRunner.java:54)
+	at 
+org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:134)
+	at org.gradle.internal.execution.steps.ExecuteStep$Mutable.execute(ExecuteStep
+.java:80)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecu
+tionStep.java:42)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(Timeo
+utStep.java:75)
+	at 
+org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreC
+reateOutputParentsStep.java:51)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreC
+reateOutputParentsStep.java:29)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutabl
+e(RemovePreviousOutputsStep.java:67)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutabl
+e(RemovePreviousOutputsStep.java:39)
+3 actionable tasks: 1 executed, 2 up-to-date
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(Br
+oadcastChangingOutputsStep.java:42)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(Br
+oadcastChangingOutputsStep.java:24)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execut
+e(CaptureOutputsAfterExecutionStep.java:69)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execut
+e(CaptureOutputsAfterExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(
+ResolveInputChangesStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(
+ResolveInputChangesStep.java:28)
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(Buil
+dCacheStep.java:189)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCa
+cheStep.java:76)
+	at org.gradle.internal.Either$Right.fold(Either.java:176)
+	at 
+org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.j
+ava:74)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.j
+ava:49)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(
+StoreExecutionStateStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(
+StoreExecutionStateStep.java:35)
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpT
+oDateStep.java:75)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipU
+pToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateSt
+ep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateSt
+ep.java:35)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedSt
+ep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedSt
+ep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeD
+elegate(ResolveMutableCachingStateStep.java:70)
+	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeD
+elegate(ResolveMutableCachingStateStep.java:32)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute
+(AbstractResolveCachingStateStep.java:69)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute
+(AbstractResolveCachingStateStep.java:37)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(Resol
+veChangesStep.java:63)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(Resol
+veChangesStep.java:34)
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(Va
+lidateStep.java:79)
+	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(Va
+lidateStep.java:65)
+	at 
+org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:99)
+	at org.gradle.internal.execution.steps.ValidateStep$Mutable.execute(ValidateSt
+ep.java:65)
+	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.
+executeMutable(CaptureMutableStateBeforeExecutionStep.java:86)
+	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.
+execute(CaptureMutableStateBeforeExecutionStep.java:65)
+	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.
+execute(CaptureMutableStateBeforeExecutionStep.java:45)
+	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeWithNon
+EmptySources(SkipEmptyMutableWorkStep.java:210)
+	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable
+(SkipEmptyMutableWorkStep.java:90)
+	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable
+(SkipEmptyMutableWorkStep.java:53)
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedSte
+p.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeM
+utable(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeM
+utable(LoadPreviousExecutionStateStep.java:23)
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(H
+andleStaleOutputsStep.java:77)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(H
+andleStaleOutputsStep.java:43)
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execu
+teMutable$0(AssignMutableWorkspaceStep.java:34)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskE
+xecution.java:305)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutab
+le(AssignMutableWorkspaceStep.java:30)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutab
+le(AssignMutableWorkspaceStep.java:21)
+	at 
+org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipeli
+neStep.java:40)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipeli
+neStep.java:23)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lam
+bda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.exe
+cute(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.exe
+cute(ExecuteWorkBuildOperationFiringStep.java:39)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCache
+Step.java:46)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCache
+Step.java:34)
+	at 
+org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:56)
+	at 
+org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:38)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(Default
+ExecutionEngine.java:68)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeI
+fValid(ExecuteActionsTaskExecuter.java:132)
+	... 61 more
+
+
+BUILD FAILED in 4s
+

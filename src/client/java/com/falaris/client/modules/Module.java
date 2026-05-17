@@ -4,6 +4,7 @@ import com.falaris.client.modules.setting.KeybindSetting;
 import com.falaris.client.modules.setting.Setting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Camera;
+import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,75 +41,33 @@ public abstract class Module {
         return setting;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public List<Setting<?>> getSettings() {
-        return settings;
-    }
-
-    public int getKeybind() {
-        return keybind.getValue();
-    }
-
-    public void setKeybind(int key) {
-        keybind.setValue(key);
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
+    public String getName() { return name; }
+    public String getDescription() { return description; }
+    public Category getCategory() { return category; }
+    public List<Setting<?>> getSettings() { return settings; }
+    public int getKeybind() { return keybind.getValue(); }
+    public void setKeybind(int key) { keybind.setValue(key); }
+    public boolean isEnabled() { return enabled; }
 
     public void setEnabled(boolean enabled) {
-        if (this.enabled == enabled) {
-            return;
-        }
-
+        if (this.enabled == enabled) return;
         this.enabled = enabled;
-        if (enabled) {
-            onEnable();
-        } else {
-            onDisable();
-        }
+        if (enabled) onEnable(); else onDisable();
     }
 
-    public void toggle() {
-        setEnabled(!enabled);
-    }
+    public void toggle() { setEnabled(!enabled); }
 
     public boolean matchesSearch(String query, boolean includeDescription) {
-        if (query == null || query.isBlank()) {
-            return true;
-        }
-
+        if (query == null || query.isBlank()) return true;
         String lowered = query.toLowerCase(Locale.ROOT);
-        if (name.toLowerCase(Locale.ROOT).contains(lowered)) {
-            return true;
-        }
-
-        if (includeDescription && description.toLowerCase(Locale.ROOT).contains(lowered)) {
-            return true;
-        }
-
+        if (name.toLowerCase(Locale.ROOT).contains(lowered)) return true;
+        if (includeDescription && description.toLowerCase(Locale.ROOT).contains(lowered)) return true;
         return aliases.stream().anyMatch(alias -> alias.contains(lowered));
     }
 
     public void onEnable() {}
-
     public void onDisable() {}
-
     public void onTick() {}
-
-    public void onRender2D() {}
-
+    public void onRender2D(GuiGraphics graphics) {}
     public void onRender3D(Camera camera, float tickDelta) {}
 }

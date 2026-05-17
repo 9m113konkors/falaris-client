@@ -1,0 +1,35 @@
+﻿
+> Compiled from "DeltaTracker.java"
+> public interface net.minecraft.client.DeltaTracker {
+>   public static final net.minecraft.client.DeltaTracker ZERO;
+  
+>   public static final net.minecraft.client.DeltaTracker ONE;
+  
+>   public abstract float getGameTimeDeltaTicks();
+  
+>   public abstract float getGameTimeDeltaPartialTick(boolean);
+  
+>   public abstract float getRealtimeDeltaTicks();
+  
+    static {};
+      Code:
+>        0: new           #7                  // class 
+net/minecraft/client/DeltaTracker$DefaultValue
+         3: dup
+>        4: fconst_0
+>        5: invokespecial #26                 // Method 
+net/minecraft/client/DeltaTracker$DefaultValue."<init>":(F)V
+>        8: putstatic     #28                 // Field 
+ZERO:Lnet/minecraft/client/DeltaTracker;
+>       11: new           #7                  // class 
+net/minecraft/client/DeltaTracker$DefaultValue
+        14: dup
+>       15: fconst_1
+>       16: invokespecial #26                 // Method 
+net/minecraft/client/DeltaTracker$DefaultValue."<init>":(F)V
+>       19: putstatic     #30                 // Field 
+ONE:Lnet/minecraft/client/DeltaTracker;
+>       22: return
+  }
+
+

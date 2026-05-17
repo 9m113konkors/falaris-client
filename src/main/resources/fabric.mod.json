@@ -3,9 +3,10 @@
 	"id": "falaris",
 	"version": "${version}",
 	"name": "falaris",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "The best vibecoded hack client. Made by Konkor & Cuhassle.",
 	"authors": [
-		"Me!"
+		"Konkor",
+		"Cuhassle"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

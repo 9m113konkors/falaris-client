@@ -13,6 +13,7 @@ public class AutoTotem extends Module {
     public final BooleanSetting fallDanger = addSetting(new BooleanSetting("Fall Danger", "Treat high fall distance as danger", true));
     public final BooleanSetting restoreItem = addSetting(new BooleanSetting("Restore Item", "Restore the previous offhand item when safe", false));
     private int restoreMenuSlot = -1;
+    private int lastSwapTick = -20;
 
     public AutoTotem() {
         super("AutoTotem", "Moves a totem into the offhand when needed", Category.COMBAT, "totem");
@@ -20,7 +21,7 @@ public class AutoTotem extends Module {
 
     @Override
     public void onTick() {
-        if (mc.player == null || mc.gameMode == null) {
+        if (mc.player == null || mc.gameMode == null || mc.player.tickCount - lastSwapTick < 5) {
             return;
         }
 
@@ -29,6 +30,7 @@ public class AutoTotem extends Module {
         if (safe && hasTotemEquipped && restoreItem.getValue() && restoreMenuSlot >= 0) {
             InventoryUtil.swapMenuSlotToOffhand(mc, restoreMenuSlot);
             restoreMenuSlot = -1;
+            lastSwapTick = mc.player.tickCount;
             return;
         }
 
@@ -43,6 +45,7 @@ public class AutoTotem extends Module {
 
         restoreMenuSlot = InventoryUtil.toMenuSlot(slot);
         InventoryUtil.swapSlotToOffhand(mc, slot);
+        lastSwapTick = mc.player.tickCount;
     }
 
     private boolean shouldUseTotem() {
